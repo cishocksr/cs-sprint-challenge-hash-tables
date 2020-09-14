@@ -1,8 +1,24 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    arr_of_dicts = []
+    result = []
+
+    for arr in arrays:
+        numsMap = {}
+
+        for num in arr:
+            numsMap[num] = True
+        
+        arr_of_dicts.append(numsMap)
+
+    for key in arr_of_dicts[0]:
+        i = 1
+        while i < (len(arr_of_dicts)):
+            if key in arr_of_dicts[i]:
+                i += 1
+            else:
+                break
+        if i == len(arr_of_dicts):
+            result.append(key)
 
     return result
 
